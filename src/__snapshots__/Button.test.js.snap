@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders complex button 1`] = `
+<button
+  aria-role="button"
+  className="custom-do-dah button-xs button-primary button-block button-border"
+  onClick={[Function]}
+  type="submit"
+>
+  Hello
+</button>
+`;
+
+exports[`ButtonLink renders complex anchor 1`] = `
+<a
+  aria-role="button"
+  className="button custom-do-dah button-xs button-primary button-block button-border"
+  href="http://turretcss.com"
+  onClick={[Function]}
+  target="_blank"
+  type={null}
+>
+  Hello
+</a>
+`;

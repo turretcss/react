@@ -1,0 +1,53 @@
+/**
+ * flex-gap
+ */
+
+.flex-gap-xs,
+.flex-gap-s,
+.flex-gap-m,
+.flex-gap-l,
+.flex-gap-xl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-gap-xs {
+  margin: -0.25rem;
+}
+
+.flex-gap-xs > * {
+  margin: 0.25rem;
+}
+
+.flex-gap-s {
+  margin: -0.5rem;
+}
+
+.flex-gap-s > * {
+  margin: 0.5rem;
+}
+
+.flex-gap-m {
+  margin: -0.75rem;
+}
+
+.flex-gap > *,
+.flex-gap-m > * {
+  margin: 0.75rem;
+}
+
+.flex-gap-l {
+  margin: -1rem;
+}
+
+.flex-gap-l > * {
+  margin: 1rem;
+}
+
+.flex-gap-xl {
+  margin: -2rem;
+}
+
+.flex-gap-xl > * {
+  margin: 2rem;
+}
