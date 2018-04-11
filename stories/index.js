@@ -14,7 +14,7 @@ import {
   Radio,
   Switch,
   Checkbox,
-} from '../src/'
+} from '../source/'
 
 import Wrap from './components/Wrap'
 import Stateful from './components/Stateful'

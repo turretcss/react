@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Radio } from './Control'
+import { Radio } from '../Control'
 
 let refCount = 0
 

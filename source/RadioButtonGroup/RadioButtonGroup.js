@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Button from './Button'
-import ButtonGroup from './ButtonGroup'
+import Button from '../Button'
+import ButtonGroup from '../ButtonGroup'
 
 const RadioButtonGroup = ({ options = [], color, activeColor = 'primary', disabled, value, onChange, ...props }) => (
   <ButtonGroup {...props}>

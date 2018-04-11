@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Checkbox } from './Control'
+import { Checkbox } from '../Control'
 
 const CheckboxGroup = ({ value = [], onChange, options = [], ...props }) =>
   options.map(option => (

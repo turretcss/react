@@ -1,8 +1,9 @@
 import React from 'react'
 import classnames from 'classnames'
-import noop from 'lodash/noop'
 
-import { indicatorMap, sizeAliases } from './constants'
+import { indicatorMap, sizeAliases } from '../constants'
+
+const noop = () => {}
 
 const typeAliases = {
   switch: 'checkbox',

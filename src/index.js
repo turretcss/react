@@ -1,6 +1,0 @@
-export { default as Button, ButtonLink } from './Button'
-export { default as ButtonGroup } from './ButtonGroup'
-export { default as CheckboxGroup } from './CheckboxGroup'
-export { Radio, Checkbox, Switch } from './Control'
-export { default as RadioButtonGroup } from './RadioButtonGroup'
-export { default as RadioGroup } from './RadioGroup'

@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { indicatorMap, sizeAliases } from './constants'
+import { indicatorMap, sizeAliases } from '../constants'
 
 const Button = ({
   Tag = 'button',
