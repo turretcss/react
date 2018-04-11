@@ -17,7 +17,7 @@
     "turretcss": "^4.1.3"
   },
   "scripts": {
-    "format": "prettier --no-semi --jsx-bracket-same-line --print-width 120 --single-quote --trailing-comma es5 --write 'src/**/*.js'",
+    "format": "prettier --no-semi --jsx-bracket-same-line --print-width 120 --single-quote --trailing-comma es5 --write 'source/**/*.js'",
     "format:stories": "prettier --no-semi --jsx-bracket-same-line --print-width 120 --single-quote --trailing-comma es5 --write 'stories/**/*.js'",
     "format:css": "prettier --single-quote --write '**/*.css'",
     "storybook": "start-storybook -p 9001 -c .storybook"

@@ -1,6 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { renderToStaticMarkup } from 'react-dom/server'
+import TestUtils from 'react-dom/test-utils'
 
 import { Checkbox, Radio, Switch } from './Control'
 
@@ -10,18 +11,28 @@ describe('Control', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('renders radio', () => {
+    const tree = renderer.create(<Radio>Hello</Radio>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders switch', () => {
+    const tree = renderer.create(<Switch>Hello</Switch>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
   it('renders checkbox (text prop)', () => {
     const tree = renderer.create(<Checkbox text="Hello" />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('prefers children over text prop', () => {
-    const tree = renderer.create(<Checkbox text="Ignored">Hello</Checkbox>)
+    const tree = renderer.create(<Checkbox text="Ignored">Hello</Checkbox>).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('renders checked checkbox', () => {
-    const tree = renderer.create(<Checkbox value={true} text="Hello" onChange={value => {}} />).toJSON()
+    const tree = renderer.create(<Checkbox value={true} text="Hello" onChange={value => (response = value)} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
@@ -85,5 +96,15 @@ describe('Control', () => {
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
+  })
+
+  it('calls onChange when input clicked', () => {
+    let newValue = null
+    const testInstance = renderer.create(<Checkbox onChange={value => (newValue = value)} />).root
+    // should execute
+    testInstance.findByType('input').props.onClick({ target: { checked: true } })
+    // should be ignored
+    testInstance.findByType('input').props.onChange({ target: { checked: false } })
+    expect(newValue).toEqual(true)
   })
 })

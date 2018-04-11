@@ -223,6 +223,29 @@ exports[`Control renders name prop 1`] = `
 </label>
 `;
 
+exports[`Control renders radio 1`] = `
+<label
+  className="control radio"
+>
+  <input
+    checked={false}
+    disabled={undefined}
+    name={undefined}
+    onChange={[Function]}
+    onClick={[Function]}
+    type="radio"
+  />
+  <span
+    className="control-indicator"
+  />
+  <span
+    className="control-label"
+  >
+    Hello
+  </span>
+</label>
+`;
+
 exports[`Control renders reversed prop 1`] = `
 <label
   className="control checkbox control-reversed"
@@ -256,6 +279,29 @@ exports[`Control renders size prop 1`] = `
   <span
     className="control-indicator"
   />
+</label>
+`;
+
+exports[`Control renders switch 1`] = `
+<label
+  className="control switch"
+>
+  <input
+    checked={false}
+    disabled={undefined}
+    name={undefined}
+    onChange={[Function]}
+    onClick={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="control-indicator"
+  />
+  <span
+    className="control-label"
+  >
+    Hello
+  </span>
 </label>
 `;
 
