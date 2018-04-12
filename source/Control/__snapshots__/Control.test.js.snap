@@ -264,6 +264,24 @@ exports[`Control renders reversed prop 1`] = `
 </label>
 `;
 
+exports[`Control renders size prop (alias) 1`] = `
+<label
+  className="control checkbox control-xl"
+>
+  <input
+    checked={false}
+    disabled={undefined}
+    name={undefined}
+    onChange={[Function]}
+    onClick={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="control-indicator"
+  />
+</label>
+`;
+
 exports[`Control renders size prop 1`] = `
 <label
   className="control checkbox control-xl"

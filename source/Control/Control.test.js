@@ -1,7 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { renderToStaticMarkup } from 'react-dom/server'
-import TestUtils from 'react-dom/test-utils'
 
 import { Checkbox, Radio, Switch } from './Control'
 
@@ -63,6 +61,11 @@ describe('Control', () => {
 
   it('renders size prop', () => {
     const tree = renderer.create(<Checkbox size="xl" />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders size prop (alias)', () => {
+    const tree = renderer.create(<Checkbox size="xlarge" />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
