@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup assigns button props to the children 1`] = `
+<div
+  className="button-group"
+>
+  <button
+    className="button-s button-primary button-border button-pill button-square"
+    type="button"
+  />
+  <button
+    className="button-s button-primary button-border button-pill button-square"
+    type="button"
+  />
+  <button
+    className="button-s button-primary button-border button-pill button-square"
+    type="button"
+  />
+</div>
+`;
+
+exports[`ButtonGroup child props take priority over parent props 1`] = `
+<div
+  className="button-group"
+>
+  <button
+    className="button-s button-primary"
+    type="button"
+  />
+  <button
+    className="button-l button-secondary"
+    type="button"
+  />
+  <button
+    className="button-s button-primary"
+    type="button"
+  />
+</div>
+`;
