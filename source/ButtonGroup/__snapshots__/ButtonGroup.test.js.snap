@@ -6,14 +6,17 @@ exports[`ButtonGroup assigns button props to the children 1`] = `
 >
   <button
     className="button-s button-primary button-border button-pill button-square"
+    disabled={true}
     type="button"
   />
   <button
     className="button-s button-primary button-border button-pill button-square"
+    disabled={true}
     type="button"
   />
   <button
     className="button-s button-primary button-border button-pill button-square"
+    disabled={true}
     type="button"
   />
 </div>
@@ -25,14 +28,17 @@ exports[`ButtonGroup child props take priority over parent props 1`] = `
 >
   <button
     className="button-s button-primary"
+    disabled={undefined}
     type="button"
   />
   <button
     className="button-l button-secondary"
+    disabled={undefined}
     type="button"
   />
   <button
     className="button-s button-primary"
+    disabled={undefined}
     type="button"
   />
 </div>

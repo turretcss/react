@@ -64,7 +64,7 @@ describe('ButtonGroup', () => {
   it('assigns button props to the children', () => {
     const tree = renderer
       .create(
-        <ButtonGroup color="primary" size="s" pill square border>
+        <ButtonGroup color="primary" size="s" pill square border disabled>
           <Button />
           <Button />
           <Button />

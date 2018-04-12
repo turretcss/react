@@ -226,6 +226,7 @@ storiesOf('Button', module)
 
 storiesOf('ButtonGroup', module)
   .add('default', () => <ButtonGroups />)
+  .add('disabled', () => <ButtonGroups disabled />)
   .add('anchors', () => <ButtonGroups Button={Anchor} />)
   .add('pill', () => <ButtonGroups pill />)
   .add('block', () => <ButtonGroups block />)

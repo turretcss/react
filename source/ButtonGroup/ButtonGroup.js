@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-const ButtonGroup = ({ className, block, size, pill, square, color, border, children = [], ...props }) => (
+const ButtonGroup = ({ className, block, size, pill, square, color, border, disabled, children = [], ...props }) => (
   <div {...props} className={classnames('button-group', className, { 'button-group-block': block })}>
     {React.Children.toArray(children).map(child =>
       React.cloneElement(child, {
@@ -10,6 +10,7 @@ const ButtonGroup = ({ className, block, size, pill, square, color, border, chil
         square: child.props.square === undefined ? square : child.props.square,
         color: child.props.color === undefined ? color : child.props.color,
         border: child.props.border === undefined ? border : child.props.border,
+        disabled: child.props.disabled === undefined ? disabled : child.props.disabled,
       })
     )}
   </div>
