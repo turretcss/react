@@ -90,8 +90,8 @@ describe('Button', () => {
   })
 
   it('spreads additional props', () => {
-    const result = renderToStaticMarkup(<Button data-name="Adam" />)
-    const expected = '<button data-name="Adam" type="button"></button>'
+    const result = renderToStaticMarkup(<Button data-name="Adam" style={{ margin: 'auto' }} />)
+    const expected = '<button data-name="Adam" style="margin:auto" type="button"></button>'
     expect(result).toEqual(expected)
   })
 
