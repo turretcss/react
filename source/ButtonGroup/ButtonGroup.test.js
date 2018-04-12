@@ -40,7 +40,7 @@ describe('ButtonGroup', () => {
     expect(result).toEqual(expected)
   })
 
-  it('handles false children with non-false children', () => {
+  it('handles false children alongside non-false children', () => {
     const result = renderToStaticMarkup(
       <ButtonGroup>
         <Button />
