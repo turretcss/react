@@ -77,9 +77,9 @@ describe('ButtonGroup', () => {
   it('child props take priority over parent props', () => {
     const tree = renderer
       .create(
-        <ButtonGroup size="s" color="primary" disabled>
+        <ButtonGroup size="s" color="primary" disabled pill border square>
           <Button />
-          <Button size="l" color="secondary" disabled={false} />
+          <Button size="l" color="secondary" disabled={false} pill={false} border={false} square={false} />
           <Button />
         </ButtonGroup>
       )

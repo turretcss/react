@@ -27,7 +27,7 @@ exports[`ButtonGroup child props take priority over parent props 1`] = `
   className="button-group"
 >
   <button
-    className="button-s button-primary"
+    className="button-s button-primary button-border button-pill button-square"
     disabled={true}
     type="button"
   />
@@ -37,7 +37,7 @@ exports[`ButtonGroup child props take priority over parent props 1`] = `
     type="button"
   />
   <button
-    className="button-s button-primary"
+    className="button-s button-primary button-border button-pill button-square"
     disabled={true}
     type="button"
   />
