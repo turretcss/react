@@ -29,5 +29,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.5"
-  }
+  },
+  "sideEffects": false
 }
