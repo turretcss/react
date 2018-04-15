@@ -153,7 +153,7 @@ exports[`Control renders custom className 1`] = `
 
 exports[`Control renders disabled (readOnly prop) 1`] = `
 <label
-  className="control checkbox disabled"
+  className="control checkbox"
 >
   <input
     checked={false}
@@ -171,7 +171,7 @@ exports[`Control renders disabled (readOnly prop) 1`] = `
 
 exports[`Control renders disabled 1`] = `
 <label
-  className="control checkbox disabled"
+  className="control checkbox"
 >
   <input
     checked={false}

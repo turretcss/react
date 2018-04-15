@@ -31,7 +31,6 @@ const Control = ({
       ['control-inline']: inline,
       ['control-reversed']: reversed,
       [color]: indicatorMap[color],
-      disabled: disabled || readOnly,
     })}>
     <input
       name={name}
