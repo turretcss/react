@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButtonGroup passed button props down to children buttons 1`] = `
+<div
+  className="button-group"
+>
+  <button
+    className="button-xs button-primary button-border button-pill button-square"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    Auto
+  </button>
+  <button
+    className="button-xs button-border button-pill button-square"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className="button-xs button-border button-pill button-square"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    Large
+  </button>
+</div>
+`;
+
+exports[`RadioButtonGroup renders color and activeColor props 1`] = `
+<div
+  className="button-group"
+>
+  <button
+    className="button-secondary"
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Auto
+  </button>
+  <button
+    className="button-primary"
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className="button-primary"
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Large
+  </button>
+</div>
+`;
+
+exports[`RadioButtonGroup renders options as buttons with "Auto" option selected (button-primary) 1`] = `
+<div
+  className="button-group"
+>
+  <button
+    className="button-primary"
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Auto
+  </button>
+  <button
+    className={null}
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className={null}
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Large
+  </button>
+</div>
+`;
+
+exports[`RadioButtonGroup renders options as buttons with "Small" option selected (button-primary) 1`] = `
+<div
+  className="button-group"
+>
+  <button
+    className={null}
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Auto
+  </button>
+  <button
+    className="button-primary"
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Small
+  </button>
+  <button
+    className={null}
+    disabled={undefined}
+    onClick={[Function]}
+    type="button"
+  >
+    Large
+  </button>
+</div>
+`;
