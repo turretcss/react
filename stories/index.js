@@ -14,6 +14,7 @@ import {
   Radio,
   Switch,
   Checkbox,
+  Select,
 } from '../source/'
 
 import Wrap from './components/Wrap'
@@ -673,3 +674,72 @@ storiesOf('RadioGroup', module)
   .add('reversed', () => <RadioGroups reversed />)
   .add('inline', () => <RadioGroups inline />)
   .add('inline reversed', () => <RadioGroups inline reversed />)
+
+const Selects = props => (
+  <div
+    style={{
+      maxWidth: props.inline ? '30rem' : '15rem',
+    }}>
+    <Stateful initial="one">
+      <Select options={options} {...props} />
+    </Stateful>
+
+    <h3>Select Sizes</h3>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Extra Large' }))} size="xl" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Large' }))} size="l" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Medium' }))} {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Small' }))} size="s" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Extra Small' }))} size="xs" {...props} />
+      </Stateful>
+    </div>
+
+    <h3>Select Indicators</h3>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Error' }))} color="error" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Warning' }))} color="warning" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Info' }))} color="info" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <Select options={options.map(option => ({ ...option, text: 'Success' }))} color="success" {...props} />
+      </Stateful>
+    </div>
+  </div>
+)
+
+storiesOf('Select', module)
+  .addDecorator(
+    host({
+      align: 'center',
+    })
+  )
+  .add('default', () => <Selects />)
+  .add('disabled', () => <Selects disabled />)
