@@ -427,13 +427,18 @@ const Controls = ({ Component, componentName, ...props }) => (
       maxWidth: props.inline ? '30rem' : '15rem',
     }}>
     <Stateful initial={true}>
-      <Component text={componentName} {...props} />
-    </Stateful>
-    <Stateful>
-      <Component text={`${componentName} with a very long label that must wrap over multiple lines`} {...props} />
+      <Component name="controls-1" text={componentName} {...props} />
     </Stateful>
     <Stateful>
       <Component
+        name="controls-1"
+        text={`${componentName} with a very long label that must wrap over multiple lines`}
+        {...props}
+      />
+    </Stateful>
+    <Stateful>
+      <Component
+        name="controls-1"
         text={
           <span>
             {componentName} with a{' '}
@@ -446,45 +451,45 @@ const Controls = ({ Component, componentName, ...props }) => (
       />
     </Stateful>
     <Stateful>
-      <Component text="Four" {...props} />
+      <Component name="controls-1" text="Four" {...props} />
     </Stateful>
     <Stateful>
-      <Component text="Five" {...props} />
+      <Component name="controls-1" text="Five" {...props} />
     </Stateful>
     <Stateful>
-      <Component text="Six" {...props} />
+      <Component name="controls-1" text="Six" {...props} />
     </Stateful>
     <h3>{componentName} Sizes</h3>
 
     <Stateful initial={true}>
-      <Component text="Extra Large" size="xl" {...props} />
+      <Component name="controls-2" text="Extra Large" size="xl" {...props} />
     </Stateful>
     <Stateful>
-      <Component text="Large" size="l" {...props} />
+      <Component name="controls-2" text="Large" size="l" {...props} />
     </Stateful>
     <Stateful>
-      <Component text="Medium" {...props} />
+      <Component name="controls-2" text="Medium" {...props} />
     </Stateful>
     <Stateful>
-      <Component text="Small" size="s" {...props} />
+      <Component name="controls-2" text="Small" size="s" {...props} />
     </Stateful>
     <Stateful>
-      <Component text="Extra Small" size="xs" {...props} />
+      <Component name="controls-2" text="Extra Small" size="xs" {...props} />
     </Stateful>
 
     <h3>{componentName} Indicators</h3>
 
     <Stateful initial={true}>
-      <Component color="error" text="Error" {...props} />
+      <Component name="controls-3" color="error" text="Error" {...props} />
     </Stateful>
     <Stateful initial={true}>
-      <Component color="warning" text="Warning" {...props} />
+      <Component name="controls-3" color="warning" text="Warning" {...props} />
     </Stateful>
     <Stateful initial={true}>
-      <Component color="info" text="Info" {...props} />
+      <Component name="controls-3" color="info" text="Info" {...props} />
     </Stateful>
     <Stateful initial={true}>
-      <Component color="success" text="Success" {...props} />
+      <Component name="controls-3" color="success" text="Success" {...props} />
     </Stateful>
   </div>
 )
