@@ -11,11 +11,11 @@ class RadioGroup extends Component {
   }
 
   render() {
-    const { options = [], value, onChange, ...props } = this.props
+    const { options = [], name, value, onChange, ...props } = this.props
     return options.map(option => (
       <Radio
         {...props}
-        name={this._name}
+        name={name || this._name}
         key={option.value}
         value={value == option.value}
         onChange={() => onChange(option.value)}

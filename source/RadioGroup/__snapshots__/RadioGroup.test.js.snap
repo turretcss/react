@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroup passes unknown props down to radios 1`] = `
+Array [
+  <label
+    className="control radio control-xs error"
+  >
+    <input
+      checked={true}
+      disabled={true}
+      name="_radio-group-5_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Auto
+    </span>
+  </label>,
+  <label
+    className="control radio control-xs error"
+  >
+    <input
+      checked={false}
+      disabled={true}
+      name="_radio-group-5_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control radio control-xs error"
+  >
+    <input
+      checked={false}
+      disabled={true}
+      name="_radio-group-5_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
+
+exports[`RadioGroup renders array of radios 1`] = `
+Array [
+  <label
+    className="control radio"
+  >
+    <input
+      checked={true}
+      disabled={undefined}
+      name="_radio-group-2_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Auto
+    </span>
+  </label>,
+  <label
+    className="control radio"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name="_radio-group-2_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control radio"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name="_radio-group-2_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
+
+exports[`RadioGroup renders array of radios with "Small" option selected 1`] = `
+Array [
+  <label
+    className="control radio"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name="_radio-group-3_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Auto
+    </span>
+  </label>,
+  <label
+    className="control radio"
+  >
+    <input
+      checked={true}
+      disabled={undefined}
+      name="_radio-group-3_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control radio"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name="_radio-group-3_"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
+
+exports[`RadioGroup renders custom name prop 1`] = `
+Array [
+  <label
+    className="control radio"
+  >
+    <input
+      checked={true}
+      disabled={undefined}
+      name="custom-name"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Auto
+    </span>
+  </label>,
+  <label
+    className="control radio"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name="custom-name"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control radio"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name="custom-name"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="radio"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
