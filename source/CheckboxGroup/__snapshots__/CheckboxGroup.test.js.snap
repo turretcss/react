@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxGroup passes unknown props down to checkboxes 1`] = `
+Array [
+  <label
+    className="control checkbox control-xs error"
+  >
+    <input
+      checked={false}
+      disabled={true}
+      name="custom-name"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control checkbox control-xs error"
+  >
+    <input
+      checked={false}
+      disabled={true}
+      name="custom-name"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Medium
+    </span>
+  </label>,
+  <label
+    className="control checkbox control-xs error"
+  >
+    <input
+      checked={false}
+      disabled={true}
+      name="custom-name"
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
+
+exports[`CheckboxGroup renders array of checkboxes 1`] = `
+Array [
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Medium
+    </span>
+  </label>,
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
+
+exports[`CheckboxGroup renders array of checkboxes with "Small" and "Large" option checked 1`] = `
+Array [
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={true}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Medium
+    </span>
+  </label>,
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={true}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
+
+exports[`CheckboxGroup renders array of checkboxes with "Small" option checked 1`] = `
+Array [
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={true}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Small
+    </span>
+  </label>,
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Medium
+    </span>
+  </label>,
+  <label
+    className="control checkbox"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      name={undefined}
+      onChange={[Function]}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="control-indicator"
+    />
+    <span
+      className="control-label"
+    >
+      Large
+    </span>
+  </label>,
+]
+`;
