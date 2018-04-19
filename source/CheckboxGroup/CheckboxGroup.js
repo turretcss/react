@@ -9,7 +9,7 @@ const CheckboxGroup = ({ value = [], onChange, options = [], ...props }) =>
       key={option.value}
       value={contains(value, option.value)}
       onChange={checked => onChange(toggleOption(value, options, option.value, checked))}
-      text={option.text}
+      label={option.label}
     />
   ))
 

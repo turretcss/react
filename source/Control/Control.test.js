@@ -19,18 +19,20 @@ describe('Control', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('renders checkbox (text prop)', () => {
-    const tree = renderer.create(<Checkbox text="Hello" />).toJSON()
+  it('renders checkbox (label prop)', () => {
+    const tree = renderer.create(<Checkbox label="Hello" />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
-  it('prefers children over text prop', () => {
-    const tree = renderer.create(<Checkbox text="Ignored">Hello</Checkbox>).toJSON()
+  it('prefers children over label prop', () => {
+    const tree = renderer.create(<Checkbox label="Ignored">Hello</Checkbox>).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('renders checked checkbox', () => {
-    const tree = renderer.create(<Checkbox value={true} text="Hello" onChange={value => (response = value)} />).toJSON()
+    const tree = renderer
+      .create(<Checkbox value={true} label="Hello" onChange={value => (response = value)} />)
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 
@@ -94,7 +96,7 @@ describe('Control', () => {
           color="error"
           size="small"
           name="hello"
-          text="Chekbox label"
+          label="Checkbox label"
         />
       )
       .toJSON()

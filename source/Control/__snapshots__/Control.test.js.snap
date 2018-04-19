@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Control prefers children over text prop 1`] = `
+exports[`Control prefers children over label prop 1`] = `
 <label
   className="control checkbox"
 >
@@ -23,7 +23,7 @@ exports[`Control prefers children over text prop 1`] = `
 </label>
 `;
 
-exports[`Control renders checkbox (text prop) 1`] = `
+exports[`Control renders checkbox (label prop) 1`] = `
 <label
   className="control checkbox"
 >
@@ -128,7 +128,7 @@ exports[`Control renders complex 1`] = `
   <span
     className="control-label"
   >
-    Chekbox label
+    Checkbox label
   </span>
 </label>
 `;

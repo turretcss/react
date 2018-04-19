@@ -19,7 +19,7 @@ class RadioGroup extends Component {
         key={option.value}
         value={value == option.value}
         onChange={() => onChange(option.value)}
-        text={option.text}
+        label={option.label}
       />
     ))
   }

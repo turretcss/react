@@ -6,8 +6,9 @@ import { indicatorMap, sizeAliases } from '../constants'
 const Select = ({
   options = [],
   empty = 'Please select ...',
-  value,
+  value = null,
   disabled,
+  defaultValue = null,
   readOnly,
   size,
   color,
@@ -24,20 +25,20 @@ const Select = ({
       disabled={disabled || readOnly}
       value={toString(value)}
       onChange={event => onChange(toValue(event.target.value, options))}>
-      {renderOptions(options, empty)}
+      {renderOptions(options, empty, defaultValue)}
     </select>
   </label>
 )
 
 function renderOptions(options, empty, defaultValue) {
   const emptyOption = empty !== false && (
-    <option value={toString(defaultValue)} key={0}>
+    <option key={0} value={toString(defaultValue)}>
       {empty}
     </option>
   )
-  const valueOptions = options.map(({ value, text }, i) => (
+  const valueOptions = options.map(({ value, label }, i) => (
     <option key={i + 1} value={value}>
-      {text}
+      {label}
     </option>
   ))
   return emptyOption ? [emptyOption, ...valueOptions] : valueOptions

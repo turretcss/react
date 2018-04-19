@@ -11,20 +11,20 @@ describe('Button', () => {
     expect(result).toEqual(expected)
   })
 
-  it('renders with text prop', () => {
-    const result = renderToStaticMarkup(<Button text="Hello" />)
+  it('renders with label prop', () => {
+    const result = renderToStaticMarkup(<Button label="Hello" />)
     const expected = '<button type="button">Hello</button>'
     expect(result).toEqual(expected)
   })
 
-  it('prefers children over text prop', () => {
-    const result = renderToStaticMarkup(<Button text="Ignored">Hello</Button>)
+  it('prefers children over label prop', () => {
+    const result = renderToStaticMarkup(<Button label="Ignored">Hello</Button>)
     const expected = '<button type="button">Hello</button>'
     expect(result).toEqual(expected)
   })
 
   it('renders type prop', () => {
-    const result = renderToStaticMarkup(<Button type="submit" text="Submit" />)
+    const result = renderToStaticMarkup(<Button type="submit" label="Submit" />)
     const expected = '<button type="submit">Submit</button>'
     expect(result).toEqual(expected)
   })

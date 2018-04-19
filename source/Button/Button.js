@@ -15,7 +15,7 @@ const Button = ({
   spinner,
   block,
   children,
-  text,
+  label,
   ...props
 }) => (
   <Tag
@@ -33,7 +33,7 @@ const Button = ({
         [color]: indicatorMap[color],
       }) || null
     }
-    children={children || text}
+    children={children || label}
   />
 )
 

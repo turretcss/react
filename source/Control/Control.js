@@ -20,7 +20,7 @@ const Control = ({
   inline,
   color,
   children,
-  text,
+  label,
   reversed,
   onChange = noop,
   // ...props // TODO: do we need to spread props?
@@ -41,7 +41,7 @@ const Control = ({
       onChange={noop}
     />
     <span className="control-indicator" />
-    {(children || text) && <span className="control-label">{children || text}</span>}
+    {(children || label) && <span className="control-label">{children || label}</span>}
   </label>
 )
 

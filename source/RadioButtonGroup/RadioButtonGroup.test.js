@@ -7,15 +7,15 @@ import RadioButtonGroup from './RadioButtonGroup'
 const options = [
   {
     value: null,
-    text: 'Auto',
+    label: 'Auto',
   },
   {
     value: 's',
-    text: 'Small',
+    label: 'Small',
   },
   {
     value: 'l',
-    text: 'Large',
+    label: 'Large',
   },
 ]
 

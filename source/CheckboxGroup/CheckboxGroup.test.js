@@ -7,15 +7,15 @@ import CheckboxGroup from './CheckboxGroup'
 const options = [
   {
     value: 's',
-    text: 'Small',
+    label: 'Small',
   },
   {
     value: 'm',
-    text: 'Medium',
+    label: 'Medium',
   },
   {
     value: 'l',
-    text: 'Large',
+    label: 'Large',
   },
 ]
 
