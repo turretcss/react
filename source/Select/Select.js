@@ -14,7 +14,8 @@ const Select = ({
   color,
   className,
   onChange,
-  ...props // should we spread props?
+  children,
+  ...props
 }) => (
   <label
     className={classnames('select', className, {
@@ -22,10 +23,11 @@ const Select = ({
       [color]: indicatorMap[color],
     })}>
     <select
+      {...props}
       disabled={disabled || readOnly}
       value={toString(value)}
-      onChange={event => onChange(toValue(event.target.value, options))}>
-      {renderOptions(options, empty, defaultValue)}
+      onChange={event => onChange(children ? event.target.value : toValue(event.target.value, options))}>
+      {children || renderOptions(options, empty, defaultValue)}
     </select>
   </label>
 )

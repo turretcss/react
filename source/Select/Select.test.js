@@ -1,0 +1,79 @@
+import React from 'react'
+import renderer from 'react-test-renderer'
+import { renderToStaticMarkup } from 'react-dom/server'
+
+import Select from './Select'
+
+const options = [
+  {
+    value: 's',
+    label: 'Small',
+  },
+  {
+    value: 'm',
+    label: 'Medium',
+  },
+  {
+    value: 'l',
+    label: 'Large',
+  },
+]
+
+describe('Select', () => {
+  it('renders', () => {
+    const tree = renderer.create(<Select />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders array of options', () => {
+    const tree = renderer.create(<Select options={options} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders array of options with "Small" option selected', () => {
+    const tree = renderer.create(<Select value="s" options={options} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders custom empty option label', () => {
+    const tree = renderer.create(<Select empty="All" options={options} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders without empty option', () => {
+    const tree = renderer.create(<Select empty={false} options={options} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('renders children if specified', () => {
+    const tree = renderer
+      .create(
+        <Select>
+          <optgroup label="Group 1">
+            <option value="1.1">Item 1.1</option>
+            <option value="1.2">Item 1.2</option>
+            <option value="1.3">Item 1.3</option>
+          </optgroup>
+          <optgroup label="Group 2">
+            <option value="2.1">Item 2.1</option>
+            <option value="2.2">Item 2.2</option>
+            <option value="2.3">Item 2.3</option>
+          </optgroup>
+        </Select>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('spreads unknown props to select', () => {
+    const tree = renderer.create(<Select name="thing" data-custom="on-select" />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('calls onChange when select changed', () => {
+    let newValue = null
+    const testInstance = renderer.create(<Select onChange={value => (newValue = value)} options={options} />).root
+    testInstance.findByType('select').props.onChange({ target: { value: 's' } })
+    expect(newValue).toEqual('s')
+  })
+})

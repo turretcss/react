@@ -680,8 +680,28 @@ const Selects = props => (
     style={{
       width: '25rem',
     }}>
+    <h3>With options array</h3>
     <Stateful>
       <Select options={options} {...props} />
+    </Stateful>
+
+    <h3>With optgroups/options as children</h3>
+    <Stateful>
+      <Select {...props}>
+        <option value="">Please select ...</option>
+        <optgroup label="Group 1">
+          <option value="1.1">Item 1.1</option>
+          <option value="1.2" disabled>
+            Item 1.2 (disabled)
+          </option>
+          <option value="1.3">Item 1.3</option>
+        </optgroup>
+        <optgroup label="Disabled" disabled>
+          <option value="2.1">Item 2.1</option>
+          <option value="2.2">Item 2.2</option>
+          <option value="2.3">Item 2.3</option>
+        </optgroup>
+      </Select>
     </Stateful>
 
     <h3>Select Sizes</h3>
