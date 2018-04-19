@@ -16,7 +16,7 @@
 }
 
 .flex-gap-xs > * {
-  margin: 0.25rem;
+  margin: 0.25rem !important;
 }
 
 .flex-gap-s {
@@ -24,16 +24,15 @@
 }
 
 .flex-gap-s > * {
-  margin: 0.5rem;
+  margin: 0.5rem !important;
 }
 
 .flex-gap-m {
   margin: -0.75rem;
 }
 
-.flex-gap > *,
 .flex-gap-m > * {
-  margin: 0.75rem;
+  margin: 0.75rem !important;
 }
 
 .flex-gap-l {
@@ -41,7 +40,7 @@
 }
 
 .flex-gap-l > * {
-  margin: 1rem;
+  margin: 1rem !important;
 }
 
 .flex-gap-xl {
@@ -49,5 +48,5 @@
 }
 
 .flex-gap-xl > * {
-  margin: 2rem;
+  margin: 2rem !important;
 }
