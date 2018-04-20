@@ -45,6 +45,19 @@ describe('Select', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('spreads option attributes to options', () => {
+    const options = [
+      {
+        value: 'one',
+        label: 'One',
+        disabled: true,
+        'data-custom': 'yep',
+      },
+    ]
+    const tree = renderer.create(<Select empty={false} options={options} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
   it('renders children if specified', () => {
     const tree = renderer
       .create(
@@ -75,5 +88,21 @@ describe('Select', () => {
     const testInstance = renderer.create(<Select onChange={value => (newValue = value)} options={options} />).root
     testInstance.findByType('select').props.onChange({ target: { value: 's' } })
     expect(newValue).toEqual('s')
+  })
+
+  it('does not call onChange when readOnly', () => {
+    let newValue = null
+    const testInstance = renderer.create(<Select onChange={value => (newValue = value)} readOnly options={options} />)
+      .root
+    testInstance.findByType('select').props.onChange({ target: { value: 's' } })
+    expect(newValue).toEqual(null)
+  })
+
+  it('respects value type when calling onChange', () => {
+    let newValue = null
+    const options = [{ value: 1, label: 'One' }]
+    const testInstance = renderer.create(<Select onChange={value => (newValue = value)} options={options} />).root
+    testInstance.findByType('select').props.onChange({ target: { value: '1' } })
+    expect(newValue).toEqual(1)
   })
 })

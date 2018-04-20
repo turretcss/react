@@ -7,10 +7,11 @@ const RadioButtonGroup = ({ options = [], color, activeColor = 'primary', value,
   <ButtonGroup {...props}>
     {options.map(option => (
       <Button
+        {...option}
         key={option.value}
         label={option.label}
         onClick={() => onChange(option.value)}
-        color={value == option.value ? activeColor : color}
+        color={value == option.value ? option.activeColor || activeColor : option.color || color}
       />
     ))}
   </ButtonGroup>

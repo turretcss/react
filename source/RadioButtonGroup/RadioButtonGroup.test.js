@@ -48,8 +48,20 @@ describe('RadioButtonGroup', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('passed button props down to children buttons', () => {
+  it('passes button props down to children buttons', () => {
     const tree = renderer.create(<RadioButtonGroup options={options} size="xs" disabled pill square border />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('spreads option attributes to buttons', () => {
+    const options = [
+      {
+        value: 'one',
+        label: 'One',
+        color: 'success',
+      },
+    ]
+    const tree = renderer.create(<RadioButtonGroup options={options} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 

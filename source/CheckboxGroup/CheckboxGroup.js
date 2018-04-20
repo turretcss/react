@@ -6,6 +6,7 @@ const CheckboxGroup = ({ value = [], onChange, options = [], ...props }) =>
   options.map(option => (
     <Checkbox
       {...props}
+      {...option}
       key={option.value}
       value={contains(value, option.value)}
       onChange={checked => onChange(toggleOption(value, options, option.value, checked))}

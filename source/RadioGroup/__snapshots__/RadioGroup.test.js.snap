@@ -259,3 +259,26 @@ Array [
   </label>,
 ]
 `;
+
+exports[`RadioGroup spreads option attributes to radios 1`] = `
+<label
+  className="control radio success"
+>
+  <input
+    checked={false}
+    disabled={undefined}
+    name="_radio-group-6_"
+    onChange={[Function]}
+    onClick={[Function]}
+    type="radio"
+  />
+  <span
+    className="control-indicator"
+  />
+  <span
+    className="control-label"
+  >
+    One
+  </span>
+</label>
+`;

@@ -25,6 +25,10 @@ import './turretcss.min.css'
 // import 'turretcss/dist/turretcss.min.css'
 import './storybook.css'
 
+const sizes = ['xl', 'l', 'm', 's', 'xs']
+
+const colors = ['error', 'warning', 'info', 'success']
+
 const ButtonComponent = Button
 
 const Buttons = ({ Button = ButtonComponent, ...props }) => (
@@ -404,6 +408,19 @@ const RadioButtonGroups = props => (
       />
     </Stateful>
 
+    <h3>Option Props</h3>
+    <Stateful initial="three">
+      <RadioButtonGroup
+        options={options.map((option, i) => ({
+          ...option,
+          size: sizes[i % sizes.length],
+          color: colors[i % colors.length],
+          disabled: i > 2,
+        }))}
+        {...props}
+      />
+    </Stateful>
+
     <h3>Radio Button Group Experimental</h3>
     <Stateful initial="three">
       <RadioButtonGroup className="margin-vertical-m" options={options} color="success" activeColor="info" {...props} />
@@ -576,6 +593,20 @@ const CheckboxGroups = props => (
         <CheckboxGroup options={options.map(option => ({ ...option, label: 'Success' }))} color="success" {...props} />
       </Stateful>
     </div>
+
+    <h3>Option Props</h3>
+    <div className="margin-vertical-m">
+      <Stateful initial={options.map(({ value }) => value)}>
+        <CheckboxGroup
+          options={options.map((option, i) => ({
+            ...option,
+            size: sizes[i % sizes.length],
+            color: colors[i % colors.length],
+          }))}
+          {...props}
+        />
+      </Stateful>
+    </div>
   </div>
 )
 
@@ -660,6 +691,20 @@ const RadioGroups = props => (
         <RadioGroup options={options.map(option => ({ ...option, label: 'Success' }))} color="success" {...props} />
       </Stateful>
     </div>
+
+    <h3>Option Props</h3>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <RadioGroup
+          options={options.map((option, i) => ({
+            ...option,
+            size: sizes[i % sizes.length],
+            color: colors[i % colors.length],
+          }))}
+          {...props}
+        />
+      </Stateful>
+    </div>
   </div>
 )
 
@@ -702,6 +747,11 @@ const Selects = props => (
           <option value="2.3">Item 2.3</option>
         </optgroup>
       </Select>
+    </Stateful>
+
+    <h3>With option props</h3>
+    <Stateful>
+      <Select options={options.map((option, i) => ({ ...option, disabled: i % 2 === 0 }))} {...props} />
     </Stateful>
 
     <h3>Select Sizes</h3>
@@ -747,4 +797,5 @@ storiesOf('Select', module)
   )
   .add('default', () => <Selects />)
   .add('disabled', () => <Selects disabled />)
+  .add('readOnly', () => <Selects readOnly />)
   .add('.inline-flex', () => <Selects className="inline-flex" />)

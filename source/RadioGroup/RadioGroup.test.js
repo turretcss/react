@@ -46,6 +46,18 @@ describe('RadioGroup', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('spreads option attributes to radios', () => {
+    const options = [
+      {
+        value: 'one',
+        label: 'One',
+        color: 'success',
+      },
+    ]
+    const tree = renderer.create(<RadioGroup options={options} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
   it('calls onChange when input clicked', () => {
     let newValue = null
     const testInstance = renderer.create(<RadioGroup onChange={value => (newValue = value)} options={options} />).root

@@ -259,3 +259,26 @@ Array [
   </label>,
 ]
 `;
+
+exports[`CheckboxGroup spreads option attributes to checkboxes 1`] = `
+<label
+  className="control checkbox success"
+>
+  <input
+    checked={false}
+    disabled={undefined}
+    name={undefined}
+    onChange={[Function]}
+    onClick={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="control-indicator"
+  />
+  <span
+    className="control-label"
+  >
+    One
+  </span>
+</label>
+`;

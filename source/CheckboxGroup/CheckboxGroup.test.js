@@ -48,6 +48,18 @@ describe('CheckboxGroup', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('spreads option attributes to checkboxes', () => {
+    const options = [
+      {
+        value: 'one',
+        label: 'One',
+        color: 'success',
+      },
+    ]
+    const tree = renderer.create(<CheckboxGroup options={options} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
   it('calls onChange when checkbox clicked', () => {
     let newValue = null
     const testInstance = renderer.create(<CheckboxGroup onChange={value => (newValue = value)} options={options} />)

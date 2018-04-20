@@ -15,6 +15,7 @@ class RadioGroup extends Component {
     return options.map(option => (
       <Radio
         {...props}
+        {...option}
         name={name || this._name}
         key={option.value}
         value={value == option.value}

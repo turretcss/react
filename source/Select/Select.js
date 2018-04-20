@@ -7,7 +7,6 @@ const Select = ({
   options = [],
   empty = 'Please select ...',
   value = null,
-  disabled,
   defaultValue = null,
   readOnly,
   size,
@@ -24,9 +23,8 @@ const Select = ({
     })}>
     <select
       {...props}
-      disabled={disabled || readOnly}
       value={toString(value)}
-      onChange={event => onChange(children ? event.target.value : toValue(event.target.value, options))}>
+      onChange={event => !readOnly && onChange(children ? event.target.value : toValue(event.target.value, options))}>
       {children || renderOptions(options, empty, defaultValue)}
     </select>
   </label>
@@ -38,8 +36,8 @@ function renderOptions(options, empty, defaultValue) {
       {empty}
     </option>
   )
-  const valueOptions = options.map(({ value, label }, i) => (
-    <option key={i + 1} value={value}>
+  const valueOptions = options.map(({ label, value, ...props }, i) => (
+    <option {...props} key={i + 1} value={value}>
       {label}
     </option>
   ))
