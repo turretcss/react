@@ -105,4 +105,23 @@ describe('Select', () => {
     testInstance.findByType('select').props.onChange({ target: { value: '1' } })
     expect(newValue).toEqual(1)
   })
+
+  it('converts empty string to null when calling onChange', () => {
+    let newValue = false
+    const options = [{ value: 1, label: 'One' }]
+    const testInstance = renderer.create(<Select onChange={value => (newValue = value)} options={options} />).root
+    testInstance.findByType('select').props.onChange({ target: { value: '' } })
+    expect(newValue).toEqual(null)
+  })
+
+  it('does not respects value type when calling onChange if children supplied', () => {
+    let newValue = null
+    const testInstance = renderer.create(
+      <Select onChange={value => (newValue = value)}>
+        <option value={1}>One</option>
+      </Select>
+    ).root
+    testInstance.findByType('select').props.onChange({ target: { value: '1' } })
+    expect(newValue).toEqual('1')
+  })
 })
