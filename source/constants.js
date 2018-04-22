@@ -8,7 +8,6 @@ export const indicatorMap = {
 export const sizeAliases = {
   xlarge: 'xl',
   large: 'l',
-  medium: 'm',
   small: 's',
   xsmall: 'xs',
 }
