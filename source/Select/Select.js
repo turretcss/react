@@ -1,38 +1,53 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { indicatorMap, sizeAliases } from '../constants'
 
-const Select = ({
-  options = [],
-  empty = 'Please select ...',
-  value = null,
-  defaultValue = null,
-  readOnly,
-  size,
-  color,
-  className,
-  onChange,
-  children,
-  ...props
-}) => (
-  <label
-    className={classnames('select', className, {
-      ['select-' + (sizeAliases[size] || size)]: size,
-      [color]: indicatorMap[color],
-    })}>
-    <select
-      {...props}
-      value={toString(value)}
-      onChange={event => !readOnly && onChange(children ? event.target.value : toValue(event.target.value, options))}>
-      {children || renderOptions(options, empty, defaultValue)}
-    </select>
-  </label>
-)
+class Select extends React.PureComponent {
+  static propTypes = {
+    options: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.node, value: PropTypes.any })),
+    empty: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
+    value: PropTypes.any,
+    readOnly: PropTypes.bool,
+    disabled: PropTypes.bool,
+    onChange: PropTypes.func,
+    size: PropTypes.oneOf(['xs', 's', 'l', 'xl', 'xsmall', 'small', 'large', 'xlarge']),
+    color: PropTypes.oneOf(['error', 'warning', 'info', 'success']),
+    className: PropTypes.any,
+  }
 
-function renderOptions(options, empty, defaultValue) {
+  static defaultProps = {
+    options: [],
+    empty: 'Please select ...',
+    value: null,
+    onChange: () => {},
+  }
+
+  render() {
+    const { options, empty, value, readOnly, size, color, className, onChange, children, ...props } = this.props
+    return (
+      <label
+        className={classnames('select', className, {
+          ['select-' + (sizeAliases[size] || size)]: size,
+          [color]: indicatorMap[color],
+        })}>
+        <select
+          {...props}
+          value={toString(value)}
+          onChange={event =>
+            !readOnly && onChange(children ? event.target.value : toValue(event.target.value, options))
+          }>
+          {children || renderOptions(options, empty)}
+        </select>
+      </label>
+    )
+  }
+}
+
+function renderOptions(options, empty) {
   const emptyOption = empty !== false && (
-    <option key={0} value={toString(defaultValue)}>
+    <option key={0} value="">
       {empty}
     </option>
   )
