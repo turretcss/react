@@ -11,9 +11,14 @@ class Stateful extends Component {
   render() {
     const { render, children } = this.props
     const { value } = this.state
+    const childProps = { value, onChange: this.onChange }
 
     if (render) {
-      return render({ value, onChange: this.onChange })
+      return render(childProps)
+    }
+
+    if (typeof children === 'function') {
+      return children(childProps)
     }
 
     return React.cloneElement(Children.only(children), { value, onChange: this.onChange })

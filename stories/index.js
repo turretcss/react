@@ -512,6 +512,128 @@ const Controls = ({ Component, componentName, ...props }) => (
   </div>
 )
 
+const Radios = props => (
+  <div
+    style={{
+      maxWidth: props.inline ? '30rem' : '15rem',
+    }}>
+    <Stateful initial={1}>
+      {({ value, onChange }) => (
+        <React.Fragment>
+          <Radio name="controls-1" label="Radio" value={value === 1} onChange={() => onChange(1)} {...props} />
+          <Radio
+            name="controls-1"
+            label={`Radio with a very long label that must wrap over multiple lines`}
+            value={value === 2}
+            onChange={() => onChange(2)}
+            {...props}
+          />
+          <Radio
+            name="controls-1"
+            label={
+              <span>
+                Radio with a{' '}
+                <a href="http://turretcss.com" target="_blank">
+                  link
+                </a>
+              </span>
+            }
+            value={value === 3}
+            onChange={() => onChange(3)}
+            {...props}
+          />
+          <Radio name="controls-1" label="Four" value={value === 4} onChange={() => onChange(4)} {...props} />
+          <Radio name="controls-1" label="Five" value={value === 5} onChange={() => onChange(5)} {...props} />
+          <Radio name="controls-1" label="Six" value={value === 6} onChange={() => onChange(6)} {...props} />
+        </React.Fragment>
+      )}
+    </Stateful>
+
+    <h3>Radio Sizes</h3>
+
+    <Stateful initial="xl">
+      {({ value, onChange }) => (
+        <React.Fragment>
+          <Radio
+            name="controls-2"
+            label="Extra Large"
+            size="xl"
+            value={value === 'xl'}
+            onChange={() => onChange('xl')}
+            {...props}
+          />
+          <Radio
+            name="controls-2"
+            label="Large"
+            size="l"
+            value={value === 'l'}
+            onChange={() => onChange('l')}
+            {...props}
+          />
+          <Radio name="controls-2" label="Medium" value={value === 'm'} onChange={() => onChange('m')} {...props} />
+          <Radio
+            name="controls-2"
+            label="Small"
+            size="s"
+            value={value === 's'}
+            onChange={() => onChange('s')}
+            {...props}
+          />
+          <Radio
+            name="controls-2"
+            label="Extra Small"
+            size="xs"
+            value={value === 'xs'}
+            onChange={() => onChange('xs')}
+            {...props}
+          />
+        </React.Fragment>
+      )}
+    </Stateful>
+
+    <h3>Radio Indicators</h3>
+
+    <Stateful initial="error">
+      {({ value, onChange }) => (
+        <React.Fragment>
+          <Radio
+            name="controls-3"
+            color="error"
+            label="Error"
+            value={value === 'error'}
+            onChange={() => onChange('error')}
+            {...props}
+          />
+          <Radio
+            name="controls-3"
+            color="warning"
+            label="Warning"
+            value={value === 'warning'}
+            onChange={() => onChange('warning')}
+            {...props}
+          />
+          <Radio
+            name="controls-3"
+            color="info"
+            label="Info"
+            value={value === 'info'}
+            onChange={() => onChange('info')}
+            {...props}
+          />
+          <Radio
+            name="controls-3"
+            color="success"
+            label="Success"
+            value={value === 'success'}
+            onChange={() => onChange('success')}
+            {...props}
+          />
+        </React.Fragment>
+      )}
+    </Stateful>
+  </div>
+)
+
 storiesOf('Switch', module)
   .addDecorator(
     host({
@@ -628,11 +750,11 @@ storiesOf('Radio', module)
       align: 'center',
     })
   )
-  .add('default', () => <Controls Component={Radio} componentName="Radio" />)
-  .add('disabled', () => <Controls Component={Radio} componentName="Radio" disabled />)
-  .add('reversed', () => <Controls Component={Radio} componentName="Radio" reversed />)
-  .add('inline', () => <Controls Component={Radio} componentName="Radio" inline />)
-  .add('inline reversed', () => <Controls Component={Radio} componentName="Radio" inline reversed />)
+  .add('default', () => <Radios />)
+  .add('disabled', () => <Radios disabled />)
+  .add('reversed', () => <Radios reversed />)
+  .add('inline', () => <Radios inline />)
+  .add('inline reversed', () => <Radios inline reversed />)
 
 const RadioGroups = props => (
   <div
