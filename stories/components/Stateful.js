@@ -10,8 +10,7 @@ class Stateful extends Component {
 
   render() {
     const { render, children } = this.props
-    const { value } = this.state
-    const childProps = { value, onChange: this.onChange }
+    const childProps = { value: this.state.value, onChange: this.onChange }
 
     if (render) {
       return render(childProps)
