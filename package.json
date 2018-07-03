@@ -1,12 +1,19 @@
 {
   "name": "@turretcss/react",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "es5/index.js",
   "license": "MIT",
+  "files": [
+    "es5"
+  ],
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.0",
     "@storybook/react": "^3.4.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "jest": "^22.4.3",
     "lodash": "^4.17.5",
     "prettier": "^1.11.1",
@@ -20,7 +27,12 @@
     "format": "prettier --no-semi --jsx-bracket-same-line --print-width 120 --single-quote --trailing-comma es5 --write 'source/**/*.js'",
     "format:stories": "prettier --no-semi --jsx-bracket-same-line --print-width 120 --single-quote --trailing-comma es5 --write 'stories/**/*.js'",
     "format:css": "prettier --single-quote --write '**/*.css'",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build": "npm run build:es5",
+    "build:es5": "babel source/ -d es5 --ignore spec.js,test.js",
+    "preversion": "jest",
+    "prepublish": "rm -rf es5 && npm run build",
+    "postpublish": "git push --follow-tags"
   },
   "peerDependencies": {
     "react": "^16.0.0-0",
