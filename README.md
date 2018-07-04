@@ -24,7 +24,7 @@ yarn add @turretcss/react
 ```js
 import { Button } from '@turretcss/react'
 
-<Button label="Click me" />
+<Button label="Click me" onClick={() => console.log('clicked!')} />
 ```
 
 ## Components
