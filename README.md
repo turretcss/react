@@ -6,7 +6,7 @@ React components to use with [turretcss](https://turretcss.com/)
 
 ## Stability
 
-This package is currently unstable and is likely to evolve.
+This package is currently in development and is likely to evolve.
 
 ## Install from npm
 
