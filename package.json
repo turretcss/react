@@ -1,5 +1,6 @@
 {
   "name": "@turretcss/react",
+  "repository": "github:turretcss/react",
   "version": "0.1.1",
   "main": "es5/index.js",
   "license": "MIT",
