@@ -41,6 +41,7 @@
     "turretcss": "^4.0.0-0"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1"
   },
