@@ -20,12 +20,14 @@ import {
 import Wrap from './components/Wrap'
 import Stateful from './components/Stateful'
 
-import './turretcss.min.css'
+// import 'turretcss/dist/'
+
+// import './turretcss.min.css'
 // import '../../turretcss/docs/dist/docs.css'
-// import 'turretcss/dist/turretcss.min.css'
+import 'turretcss/dist/turretcss.min.css'
 import './storybook.css'
 
-const sizes = ['xl', 'l', 'm', 's', 'xs']
+const sizes = ['xxl', 'xl', 'l', 'm', 's', 'xs', 'xxs']
 
 const colors = ['error', 'warning', 'info', 'success']
 
@@ -34,19 +36,23 @@ const ButtonComponent = Button
 const Buttons = ({ Button = ButtonComponent, ...props }) => (
   <div className="margin-l">
     <h3>Button Sizes</h3>
-    <Wrap>
-      <Button size="xl" onClick={action('onClick')} label="Extra Large" {...props} />
-      <Button size="l" onClick={action('onClick')} label="Large" {...props} />
-      <Button onClick={action('onClick')} label="Medium" {...props} />
-      <Button size="s" onClick={action('onClick')} label="Small" {...props} />
-      <Button size="xs" onClick={action('onClick')} label="Extra Small" {...props} />
+    <Wrap size="xl">
+      <Button size="xxl" onClick={action('onClick')} label="Button XXL" {...props} />
+      <Button size="xl" onClick={action('onClick')} label="Button XL" {...props} />
+      <Button size="l" onClick={action('onClick')} label="Button L" {...props} />
+      <Button onClick={action('onClick')} label="Button" {...props} />
+      <Button size="s" onClick={action('onClick')} label="Button S" {...props} />
+      <Button size="xs" onClick={action('onClick')} label="Button XS" {...props} />
+      <Button size="xxs" onClick={action('onClick')} label="Button XXS" {...props} />
     </Wrap>
-    <Wrap>
-      <Button disabled size="xl" onClick={action('onClick')} label="Extra Large" {...props} />
-      <Button disabled size="l" onClick={action('onClick')} label="Large" {...props} />
-      <Button disabled onClick={action('onClick')} label="Medium" {...props} />
-      <Button disabled size="s" onClick={action('onClick')} label="Small" {...props} />
-      <Button disabled size="xs" onClick={action('onClick')} label="Extra Small" {...props} />
+    <Wrap size="xl">
+      <Button disabled size="xxl" onClick={action('onClick')} label="Button XXL" {...props} />
+      <Button disabled size="xl" onClick={action('onClick')} label="Button XL" {...props} />
+      <Button disabled size="l" onClick={action('onClick')} label="Button L" {...props} />
+      <Button disabled onClick={action('onClick')} label="Button" {...props} />
+      <Button disabled size="s" onClick={action('onClick')} label="Button S" {...props} />
+      <Button disabled size="xs" onClick={action('onClick')} label="Button XS" {...props} />
+      <Button disabled size="xxs" onClick={action('onClick')} label="Button XXS" {...props} />
     </Wrap>
     <h3>Button Shades</h3>
     <Wrap>
@@ -121,20 +127,26 @@ const ButtonGroups = ({ Button = ButtonComponent, buttonProps = {}, ...props }) 
   <div className="margin-l">
     <h3>Button Group Sizes</h3>
 
+    <ButtonGroup className="margin-vertical-m" size="xxl" {...props}>
+      {createButtons(Button, 'Button XXL', buttonProps)}
+    </ButtonGroup>
     <ButtonGroup className="margin-vertical-m" size="xl" {...props}>
-      {createButtons(Button, 'Extra Large', buttonProps)}
+      {createButtons(Button, 'Button XL', buttonProps)}
     </ButtonGroup>
     <ButtonGroup className="margin-vertical-m" size="l" {...props}>
-      {createButtons(Button, 'Large', buttonProps)}
+      {createButtons(Button, 'Button L', buttonProps)}
     </ButtonGroup>
     <ButtonGroup className="margin-vertical-m" {...props}>
-      {createButtons(Button, 'Medium', buttonProps)}
+      {createButtons(Button, 'Button', buttonProps)}
     </ButtonGroup>
     <ButtonGroup className="margin-vertical-m" size="s" {...props}>
-      {createButtons(Button, 'Small', buttonProps)}
+      {createButtons(Button, 'Button S', buttonProps)}
     </ButtonGroup>
     <ButtonGroup className="margin-vertical-m" size="xs" {...props}>
-      {createButtons(Button, 'Extra Small', buttonProps)}
+      {createButtons(Button, 'Button XS', buttonProps)}
+    </ButtonGroup>
+    <ButtonGroup className="margin-vertical-m" size="xxs" {...props}>
+      {createButtons(Button, 'Button XXS', buttonProps)}
     </ButtonGroup>
 
     <h3>Button Group Shades</h3>
@@ -269,7 +281,15 @@ const RadioButtonGroups = props => (
     <Stateful initial="one">
       <RadioButtonGroup
         className="margin-vertical-m"
-        options={options.map(option => ({ ...option, label: 'Extra Large' }))}
+        options={options.map(option => ({ ...option, label: 'Button XXL' }))}
+        size="xxl"
+        {...props}
+      />
+    </Stateful>
+    <Stateful initial="one">
+      <RadioButtonGroup
+        className="margin-vertical-m"
+        options={options.map(option => ({ ...option, label: 'Button XL' }))}
         size="xl"
         {...props}
       />
@@ -277,7 +297,7 @@ const RadioButtonGroups = props => (
     <Stateful initial="one">
       <RadioButtonGroup
         className="margin-vertical-m"
-        options={options.map(option => ({ ...option, label: 'Large' }))}
+        options={options.map(option => ({ ...option, label: 'Button L' }))}
         size="l"
         {...props}
       />
@@ -285,14 +305,14 @@ const RadioButtonGroups = props => (
     <Stateful initial="one">
       <RadioButtonGroup
         className="margin-vertical-m"
-        options={options.map(option => ({ ...option, label: 'Medium' }))}
+        options={options.map(option => ({ ...option, label: 'Button' }))}
         {...props}
       />
     </Stateful>
     <Stateful>
       <RadioButtonGroup
         className="margin-vertical-m"
-        options={options.map(option => ({ ...option, label: 'Small' }))}
+        options={options.map(option => ({ ...option, label: 'Button S' }))}
         size="s"
         {...props}
       />
@@ -300,8 +320,16 @@ const RadioButtonGroups = props => (
     <Stateful>
       <RadioButtonGroup
         className="margin-vertical-m"
-        options={options.map(option => ({ ...option, label: 'Extra Small' }))}
+        options={options.map(option => ({ ...option, label: 'Button XS' }))}
         size="xs"
+        {...props}
+      />
+    </Stateful>
+    <Stateful>
+      <RadioButtonGroup
+        className="margin-vertical-m"
+        options={options.map(option => ({ ...option, label: 'Button XXS' }))}
+        size="xxs"
         {...props}
       />
     </Stateful>
@@ -347,7 +375,6 @@ const RadioButtonGroups = props => (
         {...props}
       />
     </Stateful>
-
     <h3>Radio Button Group Palettes</h3>
     <Stateful initial="one">
       <RadioButtonGroup
@@ -373,7 +400,6 @@ const RadioButtonGroups = props => (
         {...props}
       />
     </Stateful>
-
     <h3>Radio Button Group Indicators</h3>
     <Stateful initial="one">
       <RadioButtonGroup
@@ -407,7 +433,6 @@ const RadioButtonGroups = props => (
         {...props}
       />
     </Stateful>
-
     <h3>Option Props</h3>
     <Stateful initial="three">
       <RadioButtonGroup
@@ -420,7 +445,6 @@ const RadioButtonGroups = props => (
         {...props}
       />
     </Stateful>
-
     <h3>Radio Button Group Experimental</h3>
     <Stateful initial="three">
       <RadioButtonGroup className="margin-vertical-m" options={options} color="success" activeColor="info" {...props} />
@@ -480,19 +504,25 @@ const Controls = ({ Component, componentName, ...props }) => (
     <h3>{componentName} Sizes</h3>
 
     <Stateful initial={true}>
-      <Component name="controls-2" label="Extra Large" size="xl" {...props} />
+      <Component name="controls-2" label={`${componentName} XXL`} size="xxl" {...props} />
     </Stateful>
     <Stateful>
-      <Component name="controls-2" label="Large" size="l" {...props} />
+      <Component name="controls-2" label={`${componentName} XL`} size="xl" {...props} />
     </Stateful>
     <Stateful>
-      <Component name="controls-2" label="Medium" {...props} />
+      <Component name="controls-2" label={`${componentName} L`} size="l" {...props} />
     </Stateful>
     <Stateful>
-      <Component name="controls-2" label="Small" size="s" {...props} />
+      <Component name="controls-2" label={`${componentName}`} {...props} />
     </Stateful>
     <Stateful>
-      <Component name="controls-2" label="Extra Small" size="xs" {...props} />
+      <Component name="controls-2" label={`${componentName} S`} size="s" {...props} />
+    </Stateful>
+    <Stateful>
+      <Component name="controls-2" label={`${componentName} XS`} size="xs" {...props} />
+    </Stateful>
+    <Stateful>
+      <Component name="controls-2" label={`${componentName} XXS`} size="xxs" {...props} />
     </Stateful>
 
     <h3>{componentName} Indicators</h3>
@@ -551,12 +581,20 @@ const Radios = props => (
 
     <h3>Radio Sizes</h3>
 
-    <Stateful initial="xl">
+    <Stateful initial="xxl">
       {({ value, onChange }) => (
         <React.Fragment>
           <Radio
             name="controls-2"
-            label="Extra Large"
+            label="Radio XXL"
+            size="xxl"
+            value={value === 'xxl'}
+            onChange={() => onChange('xxl')}
+            {...props}
+          />
+          <Radio
+            name="controls-2"
+            label="Radio XL"
             size="xl"
             value={value === 'xl'}
             onChange={() => onChange('xl')}
@@ -564,16 +602,16 @@ const Radios = props => (
           />
           <Radio
             name="controls-2"
-            label="Large"
+            label="Radio L"
             size="l"
             value={value === 'l'}
             onChange={() => onChange('l')}
             {...props}
           />
-          <Radio name="controls-2" label="Medium" value={value === 'm'} onChange={() => onChange('m')} {...props} />
+          <Radio name="controls-2" label="Radio" value={value === 'm'} onChange={() => onChange('m')} {...props} />
           <Radio
             name="controls-2"
-            label="Small"
+            label="Radio S"
             size="s"
             value={value === 's'}
             onChange={() => onChange('s')}
@@ -581,10 +619,18 @@ const Radios = props => (
           />
           <Radio
             name="controls-2"
-            label="Extra Small"
+            label="Radio XS"
             size="xs"
             value={value === 'xs'}
             onChange={() => onChange('xs')}
+            {...props}
+          />
+          <Radio
+            name="controls-2"
+            label="Radio XXS"
+            size="xxs"
+            value={value === 'xxs'}
+            onChange={() => onChange('xxs')}
             {...props}
           />
         </React.Fragment>
@@ -670,27 +716,37 @@ const CheckboxGroups = props => (
     <h3>Checkbox Group Sizes</h3>
     <div className="margin-vertical-m">
       <Stateful initial={['one']}>
-        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Extra Large' }))} size="xl" {...props} />
+        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Checkbox XXL' }))} size="xxl" {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial={['one']}>
-        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Large' }))} size="l" {...props} />
+        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Checkbox XL' }))} size="xl" {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial={['one']}>
-        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Medium' }))} {...props} />
+        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Checkbox L' }))} size="l" {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial={['one']}>
-        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Small' }))} size="s" {...props} />
+        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Checkbox' }))} {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial={['one']}>
-        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Extra Small' }))} size="xs" {...props} />
+        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Checkbox S' }))} size="s" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial={['one']}>
+        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Checkbox XS' }))} size="xs" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial={['one']}>
+        <CheckboxGroup options={options.map(option => ({ ...option, label: 'Checkbox XXS' }))} size="xxs" {...props} />
       </Stateful>
     </div>
 
@@ -768,27 +824,37 @@ const RadioGroups = props => (
     <h3>Radio Group Sizes</h3>
     <div className="margin-vertical-m">
       <Stateful initial="one">
-        <RadioGroup options={options.map(option => ({ ...option, label: 'Extra Large' }))} size="xl" {...props} />
+        <RadioGroup options={options.map(option => ({ ...option, label: 'Radio XXL' }))} size="xxl" {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial="one">
-        <RadioGroup options={options.map(option => ({ ...option, label: 'Large' }))} size="l" {...props} />
+        <RadioGroup options={options.map(option => ({ ...option, label: 'Radio XL' }))} size="xl" {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial="one">
-        <RadioGroup options={options.map(option => ({ ...option, label: 'Medium' }))} {...props} />
+        <RadioGroup options={options.map(option => ({ ...option, label: 'Radio L' }))} size="l" {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial="one">
-        <RadioGroup options={options.map(option => ({ ...option, label: 'Small' }))} size="s" {...props} />
+        <RadioGroup options={options.map(option => ({ ...option, label: 'Radio' }))} {...props} />
       </Stateful>
     </div>
     <div className="margin-vertical-m">
       <Stateful initial="one">
-        <RadioGroup options={options.map(option => ({ ...option, label: 'Extra Small' }))} size="xs" {...props} />
+        <RadioGroup options={options.map(option => ({ ...option, label: 'Radio S' }))} size="s" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <RadioGroup options={options.map(option => ({ ...option, label: 'Radio XS' }))} size="xs" {...props} />
+      </Stateful>
+    </div>
+    <div className="margin-vertical-m">
+      <Stateful initial="one">
+        <RadioGroup options={options.map(option => ({ ...option, label: 'Radio XXS' }))} size="xxs" {...props} />
       </Stateful>
     </div>
 
@@ -879,19 +945,25 @@ const Selects = props => (
     <h3>Select Sizes</h3>
 
     <Stateful>
-      <Select options={options} empty="Extra Large" size="xl" {...props} />
+      <Select options={options} empty="Select XXL" size="xxl" {...props} />
     </Stateful>
     <Stateful>
-      <Select options={options} empty="Large" size="l" {...props} />
+      <Select options={options} empty="Select XL" size="xl" {...props} />
     </Stateful>
     <Stateful>
-      <Select options={options} empty="Medium" {...props} />
+      <Select options={options} empty="Select L" size="l" {...props} />
     </Stateful>
     <Stateful>
-      <Select options={options} empty="Small" size="s" {...props} />
+      <Select options={options} empty="Select" {...props} />
     </Stateful>
     <Stateful>
-      <Select options={options} empty="Extra Small" size="xs" {...props} />
+      <Select options={options} empty="Select S" size="s" {...props} />
+    </Stateful>
+    <Stateful>
+      <Select options={options} empty="Select XS" size="xs" {...props} />
+    </Stateful>
+    <Stateful>
+      <Select options={options} empty="Select XXS" size="xxs" {...props} />
     </Stateful>
 
     <h3>Select Indicators</h3>

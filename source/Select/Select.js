@@ -12,7 +12,7 @@ class Select extends React.PureComponent {
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
     onChange: PropTypes.func,
-    size: PropTypes.oneOf(['xs', 's', 'l', 'xl', 'xsmall', 'small', 'large', 'xlarge']),
+    size: PropTypes.oneOf(['xxs', 'xs', 's', 'l', 'xl', 'xxl', 'xsmall', 'small', 'large', 'xlarge']),
     color: PropTypes.oneOf(['error', 'warning', 'info', 'success']),
     className: PropTypes.any,
   }
