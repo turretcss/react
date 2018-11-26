@@ -36,7 +36,7 @@ const ButtonComponent = Button
 const Buttons = ({ Button = ButtonComponent, ...props }) => (
   <div className="margin-l">
     <h3>Button Sizes</h3>
-    <Wrap size="xl">
+    <Wrap>
       <Button size="xxl" onClick={action('onClick')} label="Button XXL" {...props} />
       <Button size="xl" onClick={action('onClick')} label="Button XL" {...props} />
       <Button size="l" onClick={action('onClick')} label="Button L" {...props} />
@@ -45,7 +45,7 @@ const Buttons = ({ Button = ButtonComponent, ...props }) => (
       <Button size="xs" onClick={action('onClick')} label="Button XS" {...props} />
       <Button size="xxs" onClick={action('onClick')} label="Button XXS" {...props} />
     </Wrap>
-    <Wrap size="xl">
+    <Wrap>
       <Button disabled size="xxl" onClick={action('onClick')} label="Button XXL" {...props} />
       <Button disabled size="xl" onClick={action('onClick')} label="Button XL" {...props} />
       <Button disabled size="l" onClick={action('onClick')} label="Button L" {...props} />
